@@ -522,7 +522,7 @@ function initTimeCapsule() {
         const now = new Date();
         const diff = birthdayMoment - now;
 
-        if (diff <= 0) {
+        if (diff <= 0 || TEST_MODE) {
             capsuleLock.classList.add('hidden');
             capsuleLetter.classList.remove('hidden');
             unlockLetter();
