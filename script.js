@@ -2,7 +2,7 @@
 const BIRTHDAY_MONTH = 7; // August (0-indexed)
 const BIRTHDAY_DATE = 19;
 const BIRTHDAY_YEAR = 2026;
-const TEST_MODE = false; // Set to true to preview all gifts immediately during development
+const TEST_MODE = true; // Set to true to preview all gifts immediately during development
 
 // ===== STATE =====
 let isMusicPlaying = false;
