@@ -39,11 +39,54 @@
             </div>
         </section>
 
+        <!-- Interactive Memory Wall -->
+        <section class="memory-wall-section">
+            <h2 class="section-title">Our Memory Wall</h2>
+            <div id="memory-wall" class="polaroid-gallery"></div>
+        </section>
+
         <!-- The Journey Timeline -->
         <section id="timeline" class="timeline-journey">
             <div class="timeline-line"></div>
             <div id="gift-journey" class="gift-path">
                 <!-- Gift points will be injected here -->
+            </div>
+        </section>
+
+        <!-- Love Bubbles Section -->
+        <section class="love-bubbles-section">
+            <h2 class="section-title">Pop a Bubble to Discover Why I Love You</h2>
+            <div id="love-bubbles-container" class="bubbles-container"></div>
+        </section>
+
+        <!-- Birthday Cake Section (Day 19 Only) -->
+        <section id="birthday-cake-section" class="cake-section hidden">
+            <h2 class="section-title">Make a Wish & Blow the Candles!</h2>
+            <div class="cake-container">
+                <div class="cake">
+                    <div class="candle" data-candle="1">
+                        <div class="flame"></div>
+                    </div>
+                    <div class="candle" data-candle="2">
+                        <div class="flame"></div>
+                    </div>
+                    <div class="candle" data-candle="3">
+                        <div class="flame"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Time Capsule Letter (Unlocks on exact birthday) -->
+        <section id="time-capsule" class="time-capsule-section hidden">
+            <div class="capsule-lock">
+                <div class="lock-icon">🔒</div>
+                <p class="lock-message">This letter will unlock on your birthday...</p>
+                <div id="capsule-countdown"></div>
+            </div>
+            <div class="capsule-letter hidden">
+                <h2 class="letter-title">A Letter Written Just For You</h2>
+                <div id="letter-content" class="typing-letter"></div>
             </div>
         </section>
 
@@ -58,6 +101,15 @@
 
     <!-- Global Background Elements -->
     <div id="particles-container"></div>
+    <div id="cursor-trail"></div>
+
+    <!-- Vinyl Record Music Player -->
+    <div class="vinyl-player">
+        <div class="vinyl-record" id="vinyl-record">
+            <div class="vinyl-label">♪</div>
+        </div>
+        <div class="track-info hidden" id="track-info"></div>
+    </div>
     <div class="music-controller">
         <button id="music-toggle" class="glass-circle">🎵</button>
         <audio id="bg-music" loop>
