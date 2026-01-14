@@ -25,6 +25,11 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -142,6 +147,17 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     transition: var(--transition);
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .hidden {
@@ -539,6 +555,21 @@ body {
     margin: 80px 0 40px;
     color: var(--rose-gold);
     font-style: italic;
+    opacity: 0;
+    animation: titleSlideIn 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes titleSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --- MEMORY WALL --- */
