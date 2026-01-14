@@ -304,14 +304,16 @@ function createTrailParticle(x, y, container) {
 // 2. INTERACTIVE MEMORY WALL
 function initMemoryWall() {
     const memories = [
-        { emoji: '💑', caption: 'Our First Meet', note: 'The day everything changed...' },
-        { emoji: '🌹', caption: 'First Date', note: 'Nervous but magical' },
-        { emoji: '🎬', caption: 'Movie Nights', note: 'Your head on my shoulder' },
-        { emoji: '☕', caption: 'Coffee Talks', note: 'Hours felt like minutes' },
-        { emoji: '🌙', caption: 'Stargazing', note: 'You outshine them all' },
-        { emoji: '🎵', caption: 'Our Song', note: 'Still gives me chills' },
-        { emoji: '💌', caption: 'Love Letters', note: 'Every word from my heart' },
-        { emoji: '🏖️', caption: 'Beach Walks', note: 'Footprints in the sand' }
+        { emoji: '📱', caption: 'First Video Call', note: 'Your smile through the screen made my heart skip' },
+        { emoji: '💬', caption: 'Late Night Chats', note: 'Talking until sunrise, miles apart but hearts together' },
+        { emoji: '💌', caption: 'Good Morning Texts', note: 'Waking up to your messages is my favorite thing' },
+        { emoji: '🌙', caption: 'Same Moon, Different Sky', note: 'Looking at the same stars, thinking of you' },
+        { emoji: '🎮', caption: 'Gaming Together', note: 'Distance cant stop us from being a team' },
+        { emoji: '📸', caption: 'Selfie Exchanges', note: 'Every photo you send brightens my day' },
+        { emoji: '🎵', caption: 'Shared Playlists', note: 'Music that connects our souls across the miles' },
+        { emoji: '💭', caption: 'Dreaming of Meeting', note: 'Counting down the days until I can hold you' },
+        { emoji: '❤️', caption: 'Virtual Hugs', note: 'Sending love through the screen until its real' },
+        { emoji: '🌈', caption: 'Our Future Together', note: 'Distance is temporary, our love is forever' }
     ];
 
     const gallery = document.getElementById('memory-wall');
