@@ -16,7 +16,7 @@ const gifts = [
     { day: 7, icon: '🏡', title: 'Safe Haven' },
     { day: 8, icon: '💆', title: 'Solace' },
     { day: 9, icon: '🏰', title: 'Memory Castle' },
-    { day: 10, icon: '💍', title: 'The Promise' },
+    { day: 10, icon: '💍', title: 'The 10-Year Promise' },
     { day: 11, icon: '🎨', title: 'Beautiful Chaos' },
     { day: 12, icon: '🏥', title: 'Healer Ishu' },
     { day: 13, icon: '🌌', title: 'Infinite' },
@@ -157,8 +157,15 @@ function openGift(day) {
                 <span class="revealed-emoji">${gift.icon}</span>
                 <h2 class="reveal-title">Day ${day}: ${gift.title}</h2>
                 <div class="content-body">
-                    <p>This is where the special surprise for Day ${day} will be. 
-                    I'm currently preparing even more magical content for you, my Bandariya! 🤭❤️</p>
+                    ${day === 10 ?
+                `<p>My dearest Ishu, this isn't just a promise ring found in a box. It represents my vowel to you.</p>
+                         <p><strong>The 10-Year Pact:</strong></p>
+                         <p>We might be apart for now, effectively focused on building our empires. But mark this date. In 10 years, when I stand before you as a successful man, capable of giving you the world you deserve...</p>
+                         <p>I will ask you to be mine forever. This distance is just the preparation for our lifetime of closeness. 💍✨</p>`
+                :
+                `<p>This is where the special surprise for Day ${day} will be. 
+                        I'm currently preparing even more magical content for you, my Bandariya! 🤭❤️</p>`
+            }
                     <div class="media-placeholder">✨ Special Memory Loading... ✨</div>
                 </div>
                 <button onclick="closeModal()" class="close-reveal-btn">Keep Journeying</button>
@@ -515,6 +522,7 @@ function initTimeCapsule() {
     const capsuleLock = capsuleSection.querySelector('.capsule-lock');
     const capsuleLetter = capsuleSection.querySelector('.capsule-letter');
     const countdownEl = document.getElementById('capsule-countdown');
+    let isLetterUnlocked = false;
 
     capsuleSection.classList.remove('hidden');
 
@@ -525,9 +533,12 @@ function initTimeCapsule() {
         const diff = birthdayMoment - now;
 
         if (diff <= 0 || TEST_MODE) {
-            capsuleLock.classList.add('hidden');
-            capsuleLetter.classList.remove('hidden');
-            unlockLetter();
+            if (!isLetterUnlocked) {
+                capsuleLock.classList.add('hidden');
+                capsuleLetter.classList.remove('hidden');
+                unlockLetter();
+                isLetterUnlocked = true;
+            }
         } else {
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -544,20 +555,43 @@ function unlockLetter() {
     const letterContent = document.getElementById('letter-content');
     const fullLetter = `My Dearest Ishu,
 
-As I write this, my heart is overflowing with emotions that words can barely capture. This year has been extraordinary because of you.
+Agar tum ye padh rahi ho, iska matlab hamne apne 10-year journey ka ek saal safalta se pura kar liya hai. One down, nine to go.
 
-Every moment we've shared, every laugh, every conversation, every silence - they've all been precious beyond measure. You've brought light into my life in ways I never imagined possible.
+Mujhe pata hai distance mushkil hai, par mera promise tumhare liye pehle se bhi jada strong hai. Agar tumhe kabhi lage ki meri feelings kam ho rahi hain, toh tum bilkul galat ho. Day by day, idhar feelings aur motivation badhti hi ja rahi hai tumhe hamesha ke liye apna banane ki.
 
-Your kindness, your strength, your beautiful soul - they inspire me every single day. The way you care for others, the way you pursue your dreams, the way you love - it's all so incredibly beautiful.
+Main is waqt ko use kar raha hu khud ko wo insaan banane ke liye jo tumhe deserve karta hai. Maine change hona shuru kar diya hai. Maine apne standards badha liye hain aur ab main cooking bhi dhang se kar leta hu! (Sach mein! 👨‍🍳) Aur tension mat lo, apne agreement ke hisaab se main saare rules properly follow kar raha hu.
 
-I want you to know that you are cherished, you are valued, and you are loved more than words can express. This birthday isn't just a celebration of another year - it's a celebration of the amazing person you are.
+Meri nayi pics aur updates ke liye, meri Telegram profile dekh lena. Aur tumne abhi tak meri Insta ID login kyu nahi ki pics dekhne ke liye? Maine bohot saari pics upload ki hain tumhare liye yaar! Agar password bhool gayi ho toh:
+ID: thoratpratik2323@gmail.com
+Pass: ishu1908 (Email pass if asked: pratik1908) - Bas ise meri journey dekhne ke liye use karna!
 
-Here's to all the memories we've made and all the adventures yet to come. Here's to your dreams, your happiness, and your beautiful journey ahead.
+Btw, maine tumhari pic dekhi tumhare TG pfp pe... Pehle se aur bhi jada beautiful lag rahi ho. Itne time baad tumhe dekh ke emotional ho gaya, laga jaise fir se pyaar ho gaya tumse.
 
-Happy Birthday, my love. May this year bring you everything your heart desires and more.
+Pls apna dhyan rakhna, Chutki. Time pe soaya karo. Mujhe pata hai tumhare Boards aur JEE khatam ho gaye honge (I hope ache percentile aaye ho!), par health important hai. Wo dark circles wapas mat aane dena! Aur pls, periods mein apna extra dhyan rakhna. Aur haan, BP wagera low ho, ye sab mat karna.
 
-Forever yours,
-Your Bandariya 💖`;
+Main temple jata hu aur hamesha tumhare liye pray karta hu. Aur suno, I am sorry maine tumhe bohot jyada pareshan kiya hai aur bohot problems di hain. I feel guilty about it jab bhi wo sochta hu. But I promise, I will give you every happiness that you deserve. Agar tumhe lage ki tum deserve nahi karti tab bhi main tumhe wo sab dunga jo tum chahti ho.
+
+If you are happy, I am 11000000x times happy because Ishu is my everything - happiness, world, life, and jaan. No matter what I need to suffer, I just need you to enjoy your life happily without problems.
+
+Jab bhi help chahiye, pls msg me okay? Email kar dena. Koi bhi help choti ho ya badi, kuch bhi faltu mat samajhna. Just msg me, main kaise bhi help kar dunga. Pls samajhna, future mein koi bhi problem ho, msg me, call me, kuch bhi karo. I will come for you. Jaha bhi bologe waha aa jaunga. Bas ek baar bolna "I need your help Poku (ya Pratik)" as your marzi.
+
+Don't think you are akeli and weak. You are a strong girl, okay? Samjhe na? Good girl. Now smile karo aur padhai karo pagalllll! Muahha love you! ❤️
+
+Humare paas baat karne ko bohot kuch hai, agar likhta raha toh ye letter kabhi khatam nahi hoga. Jab 10 saal baad milenge tab jee bhar ke baatein karenge. I promise main wahi banunga jiske liye tumne wish kiya tha. Bas mera wait karna.
+
+Aur haan... Main tumhe "IP Verse" ka founder banaunga (baaki surprise hai hehe).
+
+P.S. Sapne mein aake roz daata mat karo mujhe! 😂
+
+My Lord, My Bandariya, My Ishu Bby... Honestly, Love Youuuu! ❤️
+
+Note: Ye website app tum kabhi bhi open kar sakti ho aur dekh sakti ho. Bas click karke open karo aur save karke rakh lo.
+
+And Sorry... mujhe pata hai tumne "No Contact" bola tha, lekin main bas tumhe thoda sa happy karna chahta tha kyunki last birthday meri wajah se ganda gaya tha. I am so sorry for that... uske liye main khud ko kabhi maaf nahi kar paunga.
+
+I am still waiting for you.
+
+Your Poku ❤️`;
 
     let index = 0;
     const typingSpeed = 50;
